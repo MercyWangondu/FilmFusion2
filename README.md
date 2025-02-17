@@ -35,10 +35,10 @@ npm start
 ## 🔗 API Integration
 FilmFusion fetches movie details from The Movie Database (TMDb). To integrate the API, follow these steps:
 Obtain an API key from TMDb by signing up on the website.
-In the project, create a .env file in the root directory and add your API key:
+In the project, create a services folder and an api.js file in the root directory and add your API key in the variable shown below:
 
 ```
-REACT_APP_TMDB_API_KEY=your_api_key_here
+const API_KEY = "";
 ```
 ## 🎥 How to Use
 
