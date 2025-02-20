@@ -45,3 +45,70 @@ const API_KEY = "";
 - Search for a Movie - Use the search bar to find a movie.
 - Click to Watch - Select a movie to start streaming.
 - Enjoy Seamless Playback - Watch movies with smooth controls (Movie playback feature is still under development).
+
+## 🔗 API Integration  
+
+FilmFusion fetches movie details from **The Movie Database (TMDb)**. To integrate the API, follow these steps:  
+
+ 1. Sign up at [TMDb](https://www.themoviedb.org/) and get an API key. 
+  
+ 2. Inside the project, create a `services` folder.  
+3. Add an `api.js` file in the root directory.  
+4. Add the following code:  
+
+```js
+const API_KEY = "your_api_key_here";
+```
+
+## 🔥 Firebase Setup  
+
+FilmFusion uses **Firebase** for authentication, storing user profiles, and managing favorites. Follow these steps to set it up:  
+
+### 1️⃣ Create a Firebase Project  
+- Go to [Firebase Console](https://console.firebase.google.com/).  
+- Click **"Add Project"** and follow the setup process.  
+- Enable **Firestore Database** and **Authentication** in the Firebase settings.  
+
+### 2️⃣ Add Firebase to Your React App  
+- In your Firebase project, go to **Project Settings > General** and scroll down to **"Your Apps"**.  
+- Select **Web App**, register your app, and copy the Firebase config.  
+
+### 3️⃣ Set Up Firebase in Your Project  
+1. Create a **`Firebase`** folder in the project.  
+2. Inside it, create a **`firebaseconfig.js`** file.  
+3. Add your Firebase configuration like this:  
+
+```js
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "YOUR_FIREBASE_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+```
+### 4️⃣ Install Firebase in Your Project
+Run this command in your terminal:
+
+```js
+npm install firebase
+```
+
+##  🎥 How to Use
+
+- 🔎 Search for a Movie – Use the search bar to find a movie.
+- ❤️ Add to Favorites – Save movies to your favorites.
+- 👤 Profile Page – Update name, email, and profile picture.
+- 🔑  Register/Login (optional) 
+
+
+
